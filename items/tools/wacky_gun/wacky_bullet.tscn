@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cabmmsx5fyauo"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_7i5i8"]
+[ext_resource type="Script" uid="uid://dw8t6l4xn6x3s" path="res://items/tools/simple_projectile_2d.gd" id="1_ahvfu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahvfu"]
+size = Vector2(64, 32)
+
+[node name="WackyBullet" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 4
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 8
+script = ExtResource("1_ahvfu")
+metadata/_custom_type_script = "uid://dw8t6l4xn6x3s"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ahvfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(0.25, 0.5)
+texture = ExtResource("1_7i5i8")

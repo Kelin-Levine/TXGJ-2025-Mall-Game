@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://t26v4vxs28wu"]
+
+[ext_resource type="Script" uid="uid://c78fucenyb70b" path="res://items/tools/wacky_gun/wacky_gun.gd" id="1_fidug"]
+[ext_resource type="PackedScene" uid="uid://cabmmsx5fyauo" path="res://items/tools/wacky_gun/wacky_bullet.tscn" id="2_xkthk"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_aqirx"]
+
+[node name="WackyGun" type="Node2D" node_paths=PackedStringArray("spawn_marker")]
+script = ExtResource("1_fidug")
+spawn_speed = 1000.0
+spawn_marker = NodePath("Marker2D")
+bullet = ExtResource("2_xkthk")
+metadata/_custom_type_script = "uid://c78fucenyb70b"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.2)
+texture = ExtResource("3_aqirx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+scale = Vector2(0.25, 0.1)
+texture = ExtResource("3_aqirx")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(16, -8)
