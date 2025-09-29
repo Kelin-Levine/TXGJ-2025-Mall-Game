@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://byque4w54oowj"]
+[gd_scene load_steps=6 format=3 uid="uid://byque4w54oowj"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dl20fgu0afmne" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://bxe1dc0kjag5n" path="res://player/gmanora_topdown.png" id="2_g1dw6"]
 [ext_resource type="Script" uid="uid://cvt45cappxxym" path="res://player/mouse_input.gd" id="3_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://bu6e7xl0axbr5" path="res://player/gmanora_armsout_topdown.png" id="3_yw30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-size = Vector2(64, 64)
+size = Vector2(32, 67.5)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("tool_handle", "sprite")]
 collision_layer = 2
 collision_mask = 5
 motion_mode = 1
@@ -15,16 +16,21 @@ platform_on_leave = 2
 platform_floor_layers = 1
 platform_wall_layers = 1
 script = ExtResource("1_rkbax")
-speed = 100.0
-aim_offset = 32.0
+speed = 400.0
+tool_handle = NodePath("ToolHandle")
+sprite = NodePath("Sprite2D")
+tex_arms_in = ExtResource("2_g1dw6")
+tex_arms_out = ExtResource("3_yw30f")
 metadata/_custom_type_script = "uid://dl20fgu0afmne"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0.75)
 shape = SubResource("RectangleShape2D_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_oul6g")
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_g1dw6")
 
 [node name="MouseInput" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("3_g1dw6")
@@ -32,5 +38,9 @@ player = NodePath("..")
 metadata/_custom_type_script = "uid://cvt45cappxxym"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
 limit_enabled = false
 position_smoothing_enabled = true
+
+[node name="ToolHandle" type="Marker2D" parent="."]
+position = Vector2(14, 27)

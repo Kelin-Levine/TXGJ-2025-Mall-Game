@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj4gq8y5k5thd"]
+
+[ext_resource type="Script" uid="uid://c5dunfxhhvsho" path="res://items/tools/penetrating_projectile_2d.gd" id="1_jpeol"]
+[ext_resource type="Texture2D" uid="uid://7ka2wj3xnjlw" path="res://items/tools/ship/cruiseship.png" id="2_jpeol"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jpeol"]
+radius = 32.0
+height = 256.0
+
+[node name="ShipBullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_jpeol")
+damage = 1000.0
+lifespan = 25.0
+metadata/_custom_type_script = "uid://c5dunfxhhvsho"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_jpeol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 0)
+rotation = -3.1415925
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_jpeol")

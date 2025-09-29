@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkfc6d0njb076"]
+
+[ext_resource type="Script" uid="uid://c5dunfxhhvsho" path="res://items/tools/penetrating_projectile_2d.gd" id="1_vw6hi"]
+[ext_resource type="Texture2D" uid="uid://dfavobt4qiblu" path="res://items/tools/jesus/jesus.png" id="2_vw6hi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahvfu"]
+size = Vector2(96, 128)
+
+[node name="JesusStanding" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_vw6hi")
+damage = 1000.0
+lifespan = 60.0
+metadata/_custom_type_script = "uid://c5dunfxhhvsho"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ahvfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vw6hi")

@@ -1,23 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkebqjcnr4fba"]
+[gd_scene load_steps=15 format=3 uid="uid://dkebqjcnr4fba"]
 
 [ext_resource type="PackedScene" uid="uid://byque4w54oowj" path="res://player/player.tscn" id="1_coei1"]
-[ext_resource type="Script" uid="uid://p8qgnjx1na0e" path="res://utility/player_giver.gd" id="2_wcxxc"]
-[ext_resource type="PackedScene" uid="uid://t26v4vxs28wu" path="res://items/tools/wacky_gun/wacky_gun.tscn" id="3_3rusa"]
+[ext_resource type="Script" uid="uid://bhw61cgrgdlmd" path="res://mall/mall.gd" id="1_nuin1"]
+[ext_resource type="PackedScene" uid="uid://b2wwmlr0nyw2i" path="res://mall/freddy_five_nights.tscn" id="2_if7ue"]
+[ext_resource type="PackedScene" uid="uid://datu4a3w0gkn4" path="res://gimmicks/money_time/clock_spawner.tscn" id="2_y6d4t"]
+[ext_resource type="PackedScene" uid="uid://bveq5o1ouoohu" path="res://gimmicks/money_time/money_time.tscn" id="3_cngdw"]
+[ext_resource type="TileSet" path="res://mall/mall_tile.tres" id="3_r2eiq"]
 [ext_resource type="PackedScene" uid="uid://cslknhxcr80n4" path="res://enemy/simple_enemy.tscn" id="4_wcxxc"]
+[ext_resource type="PackedScene" uid="uid://cl8gb1pcohd58" path="res://enemy/shielded_enemy.tscn" id="5_3rusa"]
+[ext_resource type="Script" uid="uid://p8qgnjx1na0e" path="res://utility/player_giver.gd" id="5_gv4h7"]
+[ext_resource type="PackedScene" uid="uid://btcth45xmfj8v" path="res://gimmicks/offer_box/offer_box.tscn" id="6_gv4h7"]
+[ext_resource type="PackedScene" uid="uid://t26v4vxs28wu" path="res://items/tools/wacky_gun/wacky_gun.tscn" id="6_nv2sv"]
+[ext_resource type="PackedScene" uid="uid://d3emmfhmlrt7j" path="res://enemy/fast_enemy.tscn" id="7_nv2sv"]
+[ext_resource type="PackedScene" uid="uid://dqsr64c0ylxg6" path="res://enemy/rolling_enemy.tscn" id="8_ppa75"]
+[ext_resource type="PackedScene" uid="uid://chwuhs1ojivyv" path="res://enemy/enemy_spawner.tscn" id="10_pqyug"]
 
-[node name="Mall" type="Node"]
+[node name="Mall" type="Node" node_paths=PackedStringArray("map")]
+script = ExtResource("1_nuin1")
+map = NodePath("TileMapLayer")
+freddy_five_nights = ExtResource("2_if7ue")
+metadata/_custom_type_script = "uid://bhw61cgrgdlmd"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-enabled = false
+position = Vector2(-960, -75)
+tile_set = ExtResource("3_r2eiq")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("10_pqyug")]
+position = Vector2(-496, -276)
+
+[node name="ClockSpawner" parent="." instance=ExtResource("2_y6d4t")]
+position = Vector2(-607, -378)
+spawn_range = Rect2(0, 0, 1000, 800)
 
 [node name="Player" parent="." instance=ExtResource("1_coei1")]
-aim_offset = 48.0
+
+[node name="PhoneCall" parent="." instance=ExtResource("6_gv4h7")]
+
+[node name="MoneyTime" parent="." instance=ExtResource("3_cngdw")]
 
 [node name="PlayerGiver" type="Node" parent="." node_paths=PackedStringArray("player")]
-script = ExtResource("2_wcxxc")
+script = ExtResource("5_gv4h7")
 player = NodePath("../Player")
-tool = ExtResource("3_3rusa")
+tool = ExtResource("6_nv2sv")
 metadata/_custom_type_script = "uid://p8qgnjx1na0e"
 
 [node name="SimpleEnemy" parent="." instance=ExtResource("4_wcxxc")]
 position = Vector2(-242, -146)
+
+[node name="ShieldedEnemy" parent="." instance=ExtResource("5_3rusa")]
+position = Vector2(223, -161)
+
+[node name="FastEnemy" parent="." instance=ExtResource("7_nv2sv")]
+position = Vector2(-49, -199)
+
+[node name="RollingEnemy" parent="." instance=ExtResource("8_ppa75")]
+position = Vector2(108, -189)

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2wwmlr0nyw2i"]
+
+[ext_resource type="Script" uid="uid://bqitpumntukue" path="res://mall/freddy_five_nights.gd" id="1_ku2qg"]
+[ext_resource type="PackedScene" uid="uid://s1uykgk3esk1" path="res://enemy/wallet/wallet.tscn" id="2_vkgv7"]
+[ext_resource type="Texture2D" uid="uid://dlw6ufxcdr461" path="res://mall/freddy_five_nights.png" id="3_ku2qg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7axxq"]
+size = Vector2(128, 96)
+
+[node name="FreddyFiveNights" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
+collision_layer = 0
+collision_mask = 2
+collision_priority = 100.0
+motion_mode = 1
+platform_on_leave = 2
+platform_floor_layers = 1
+platform_wall_layers = 1
+script = ExtResource("1_ku2qg")
+max_health = 1000000000.0
+speed = 200.0
+value_range = Vector2(120, 120)
+sprites = [NodePath("MallsecuritySprite")]
+wallet_scene = ExtResource("2_vkgv7")
+metadata/_custom_type_script = "uid://bqitpumntukue"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7axxq")
+
+[node name="MallsecuritySprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ku2qg")

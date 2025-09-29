@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="BoxOffer" load_steps=18 format=3 uid="uid://cxtodejhumce4"]
+
+[ext_resource type="AudioStream" uid="uid://d1ofey8f2quyd" path="res://gimmicks/offer_box/ads/car/injured good intercom 1.mp3" id="1_kquj8"]
+[ext_resource type="Script" uid="uid://cfniqj1lbha45" path="res://gimmicks/offer_box/resources/box_offer.gd" id="1_ml68c"]
+[ext_resource type="AudioStream" uid="uid://bxufjbmlypovh" path="res://gimmicks/offer_box/ads/car/injujred good intercom 2.mp3" id="2_u0vci"]
+[ext_resource type="Texture2D" uid="uid://cl7c8aghyb1up" path="res://gimmicks/offer_box/ads/car/ad1[injured_good].png" id="3_k26cg"]
+[ext_resource type="Script" uid="uid://bv5fdu7ur5o30" path="res://gimmicks/offer_box/resources/box_message.gd" id="4_51s7w"]
+[ext_resource type="Script" uid="uid://8vskdejnd65h" path="res://gimmicks/offer_box/resources/intercom_call.gd" id="5_r3ayj"]
+[ext_resource type="AudioStream" uid="uid://cxbielsthm0gn" path="res://gimmicks/offer_box/ads/car/car warranty.mp3" id="6_51s7w"]
+[ext_resource type="PackedScene" uid="uid://caj4c5t5gv50h" path="res://items/tools/car/car.tscn" id="7_r3ayj"]
+[ext_resource type="Script" uid="uid://cjtbye8oxjp2v" path="res://gimmicks/offer_box/resources/phone_call.gd" id="8_qr847"]
+
+[sub_resource type="Resource" id="Resource_51s7w"]
+script = ExtResource("4_51s7w")
+char_duration = 100
+raw_text = "Have you or a loved one been injured in an auto accident?\\nDo you yearn for justice?"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_r3ayj"]
+script = ExtResource("4_51s7w")
+char_duration = 100
+raw_text = "Call Roberts & Roberts Law at {num}\\nfor our opinions and legal counsel!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_qr847"]
+script = ExtResource("5_r3ayj")
+audio1 = ExtResource("1_kquj8")
+audio2 = ExtResource("2_u0vci")
+image = ExtResource("3_k26cg")
+messages = Array[ExtResource("4_51s7w")]([SubResource("Resource_51s7w"), SubResource("Resource_r3ayj")])
+metadata/_custom_type_script = "uid://8vskdejnd65h"
+
+[sub_resource type="Resource" id="Resource_mg67y"]
+script = ExtResource("4_51s7w")
+char_duration = 40
+raw_text = "We’ve been trying to reach you about\\nyour car’s extended warranty."
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_6fwr6"]
+script = ExtResource("4_51s7w")
+char_duration = 40
+raw_text = "Perhaps through advertisements that\\nwould trick you into calling us instead!!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_7r1bu"]
+script = ExtResource("4_51s7w")
+raw_text = "What an evil scheme, don’t you think?"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_pbaha"]
+script = ExtResource("4_51s7w")
+raw_text = "Anyways, it turns out you’ve got a lot of extended warranty for your car. So here’s an extra one!!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_b61db"]
+script = ExtResource("8_qr847")
+audio = ExtResource("6_51s7w")
+item = ExtResource("7_r3ayj")
+price = 500.0
+messages = Array[ExtResource("4_51s7w")]([SubResource("Resource_mg67y"), SubResource("Resource_6fwr6"), SubResource("Resource_7r1bu"), SubResource("Resource_pbaha")])
+metadata/_custom_type_script = "uid://cjtbye8oxjp2v"
+
+[resource]
+script = ExtResource("1_ml68c")
+intercom = SubResource("Resource_qr847")
+phone = SubResource("Resource_b61db")
+metadata/_custom_type_script = "uid://cfniqj1lbha45"

@@ -1,25 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://cslknhxcr80n4"]
+[gd_scene load_steps=6 format=3 uid="uid://cslknhxcr80n4"]
 
 [ext_resource type="Script" uid="uid://h68i3v6dkoa5" path="res://enemy/enemy_2d.gd" id="1_smec7"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_dii7c"]
+[ext_resource type="Texture2D" uid="uid://bwg0dsp7rsfjg" path="res://enemy/sprites/fierysubjectemployee_topdown.png" id="2_7axxq"]
+[ext_resource type="PackedScene" uid="uid://s1uykgk3esk1" path="res://enemy/wallet/wallet.tscn" id="2_jnhmk"]
+[ext_resource type="Texture2D" uid="uid://ea2ssn1w8eok" path="res://enemy/sprites/pretzelstoreemployee_topdown.png" id="3_jnhmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7axxq"]
-size = Vector2(32, 32)
+size = Vector2(28, 64)
 
-[node name="SimpleEnemy" type="CharacterBody2D"]
+[node name="SimpleEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 7
 motion_mode = 1
 platform_on_leave = 2
 platform_floor_layers = 1
 platform_wall_layers = 1
 script = ExtResource("1_smec7")
+value_range = Vector2(6, 8)
+sprites = [NodePath("FireysubjectSprite"), NodePath("PretzelstoreSprite")]
+wallet_scene = ExtResource("2_jnhmk")
 metadata/_custom_type_script = "uid://h68i3v6dkoa5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7axxq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0, 0, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_dii7c")
+[node name="FireysubjectSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2, 4)
+rotation = 1.5707964
+scale = Vector2(0.113, 0.113)
+texture = ExtResource("2_7axxq")
+
+[node name="PretzelstoreSprite" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_jnhmk")

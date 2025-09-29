@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://datu4a3w0gkn4"]
+
+[ext_resource type="Script" uid="uid://c5xfwbncdncg5" path="res://gimmicks/money_time/clock_spawner.gd" id="1_6n0ny"]
+[ext_resource type="PackedScene" uid="uid://cpybgwxsgogvy" path="res://gimmicks/money_time/clock_pickup/clock.tscn" id="2_fsuto"]
+
+[node name="ClockSpawner" type="Marker2D" node_paths=PackedStringArray("timer")]
+script = ExtResource("1_6n0ny")
+period_range = Vector2(5, 12)
+timer = NodePath("Timer")
+clock_scene = ExtResource("2_fsuto")
+metadata/_custom_type_script = "uid://c5xfwbncdncg5"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true

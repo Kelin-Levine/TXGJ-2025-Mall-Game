@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjx1y7bi13hcn"]
+
+[ext_resource type="Script" uid="uid://bttdsepwluwfn" path="res://items/tools/laser_gun/laser_gun.gd" id="1_207qh"]
+[ext_resource type="PackedScene" uid="uid://73322nq7j82c" path="res://items/tools/laser_gun/laser_bullet.tscn" id="2_sisse"]
+[ext_resource type="Texture2D" uid="uid://ot23na7scfr6" path="res://items/tools/laser_gun/laserpointer_gun.png" id="3_revqk"]
+
+[node name="LaserGun" type="Node2D" node_paths=PackedStringArray("spawn_marker")]
+script = ExtResource("1_207qh")
+spawn_marker = NodePath("Marker2D")
+bullet = ExtResource("2_sisse")
+metadata/_custom_type_script = "uid://c78fucenyb70b"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(31, 16)
+
+[node name="LaserGun" type="Sprite2D" parent="."]
+position = Vector2(13, 11)
+rotation = 3.1415927
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_revqk")

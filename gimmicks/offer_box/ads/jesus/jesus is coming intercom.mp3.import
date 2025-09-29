@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7kfjnj2ux35"
+path="res://.godot/imported/jesus is coming intercom.mp3-fd26ce4dd5462f2413130dd7b2b15c09.mp3str"
+
+[deps]
+
+source_file="res://gimmicks/offer_box/ads/jesus/jesus is coming intercom.mp3"
+dest_files=["res://.godot/imported/jesus is coming intercom.mp3-fd26ce4dd5462f2413130dd7b2b15c09.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

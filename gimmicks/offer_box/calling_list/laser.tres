@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="BoxOffer" load_steps=15 format=3 uid="uid://f4cusrb4nxu4"]
+
+[ext_resource type="Script" uid="uid://cfniqj1lbha45" path="res://gimmicks/offer_box/resources/box_offer.gd" id="1_fmyoa"]
+[ext_resource type="AudioStream" uid="uid://mmel4nybk58m" path="res://gimmicks/offer_box/ads/laser/kitten intercom 1.wav" id="1_jpqs3"]
+[ext_resource type="AudioStream" uid="uid://c577qe7q4w5hb" path="res://gimmicks/offer_box/ads/laser/kitten intercom 2.mp3" id="2_jpqs3"]
+[ext_resource type="Script" uid="uid://bv5fdu7ur5o30" path="res://gimmicks/offer_box/resources/box_message.gd" id="3_c4mko"]
+[ext_resource type="Texture2D" uid="uid://dc3owmhtbactd" path="res://gimmicks/offer_box/ads/laser/SAVETHEKITTENS!.png" id="3_jpqs3"]
+[ext_resource type="Script" uid="uid://8vskdejnd65h" path="res://gimmicks/offer_box/resources/intercom_call.gd" id="4_p7elu"]
+[ext_resource type="AudioStream" uid="uid://dugxy5xbw8mvt" path="res://gimmicks/offer_box/ads/laser/hewwo_kitten.mp3" id="5_kmb2r"]
+[ext_resource type="PackedScene" uid="uid://cjx1y7bi13hcn" path="res://items/tools/laser_gun/laser_gun.tscn" id="6_vbnkg"]
+[ext_resource type="Script" uid="uid://cjtbye8oxjp2v" path="res://gimmicks/offer_box/resources/phone_call.gd" id="7_1pqcn"]
+
+[sub_resource type="Resource" id="Resource_jpqs3"]
+script = ExtResource("3_c4mko")
+char_duration = 200
+raw_text = "meeowwwwwww meeeeowwwwwww merrowwww\\nSAVE THE CATSSS CALL {num} MEOW!!!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_s08qu"]
+script = ExtResource("4_p7elu")
+audio1 = ExtResource("1_jpqs3")
+audio2 = ExtResource("2_jpqs3")
+image = ExtResource("3_jpqs3")
+messages = Array[ExtResource("3_c4mko")]([SubResource("Resource_jpqs3")])
+metadata/_custom_type_script = "uid://8vskdejnd65h"
+
+[sub_resource type="Resource" id="Resource_c4mko"]
+script = ExtResource("3_c4mko")
+char_duration = 200
+raw_text = "hewwo? who’s calling?? kitten wants to know…\\n[little giggles]"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_p7elu"]
+script = ExtResource("3_c4mko")
+char_duration = 100
+raw_text = "mmmm... kitten likes you... uwu :3\\nhow about kitten sends you a little present, nyah?"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_xyhic"]
+script = ExtResource("7_1pqcn")
+audio = ExtResource("5_kmb2r")
+item = ExtResource("6_vbnkg")
+price = 400.0
+messages = Array[ExtResource("3_c4mko")]([SubResource("Resource_c4mko"), SubResource("Resource_p7elu")])
+metadata/_custom_type_script = "uid://cjtbye8oxjp2v"
+
+[resource]
+script = ExtResource("1_fmyoa")
+intercom = SubResource("Resource_s08qu")
+phone = SubResource("Resource_xyhic")
+metadata/_custom_type_script = "uid://cfniqj1lbha45"

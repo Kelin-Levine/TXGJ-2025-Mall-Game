@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk5vka3flb26i"]
+
+[ext_resource type="Script" uid="uid://bqonlym1l4q7y" path="res://items/tools/ship/ship.gd" id="1_rssnn"]
+[ext_resource type="PackedScene" uid="uid://cj4gq8y5k5thd" path="res://items/tools/ship/ship_bullet.tscn" id="2_u5fqi"]
+[ext_resource type="Texture2D" uid="uid://7ka2wj3xnjlw" path="res://items/tools/ship/cruiseship.png" id="3_6e4nr"]
+
+[node name="Ship" type="Node2D"]
+script = ExtResource("1_rssnn")
+bullet = ExtResource("2_u5fqi")
+metadata/_custom_type_script = "uid://bqonlym1l4q7y"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.842171e-14, -3.0000002)
+rotation = -3.1415925
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_6e4nr")

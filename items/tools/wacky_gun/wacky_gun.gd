@@ -9,7 +9,8 @@ extends ToolBase
 
 func fire() -> void:
 	var b = bullet.instantiate()
-	b.rotation = rotation
-	b.position = spawn_marker.global_position
+	b.global_rotation = global_rotation
+	b.global_position = spawn_marker.global_position
 	b.linear_velocity = Vector2.from_angle(b.rotation) * spawn_speed
-	get_tree().root.add_child(b)
+	PlayerManager.mall_inst.add_child(b)
+	PlayerManager.durability -= 0.01

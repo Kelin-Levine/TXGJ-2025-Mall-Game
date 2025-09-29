@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="BoxOffer" load_steps=15 format=3 uid="uid://dcy4kh8xkd8o5"]
+
+[ext_resource type="AudioStream" uid="uid://b140kwmoupnbm" path="res://gimmicks/offer_box/ads/wacky_gun/intercom_wacky1.wav" id="1_0ul5k"]
+[ext_resource type="Script" uid="uid://cfniqj1lbha45" path="res://gimmicks/offer_box/resources/box_offer.gd" id="1_ewhfk"]
+[ext_resource type="AudioStream" uid="uid://ccp0aks6ktlnl" path="res://gimmicks/offer_box/ads/wacky_gun/intercom_wacky2.wav" id="2_ta31h"]
+[ext_resource type="Texture2D" uid="uid://71jibhav2my1" path="res://gimmicks/offer_box/ads/wacky_gun/ad6[wacky_gun].png" id="3_0ul5k"]
+[ext_resource type="Script" uid="uid://bv5fdu7ur5o30" path="res://gimmicks/offer_box/resources/box_message.gd" id="4_22hgg"]
+[ext_resource type="Script" uid="uid://8vskdejnd65h" path="res://gimmicks/offer_box/resources/intercom_call.gd" id="5_6gslr"]
+[ext_resource type="AudioStream" uid="uid://crm6myoe38hpr" path="res://gimmicks/offer_box/ads/wacky_gun/phone_wacky.wav" id="6_l64e8"]
+[ext_resource type="PackedScene" uid="uid://t26v4vxs28wu" path="res://items/tools/wacky_gun/wacky_gun.tscn" id="7_0ul5k"]
+[ext_resource type="Script" uid="uid://cjtbye8oxjp2v" path="res://gimmicks/offer_box/resources/phone_call.gd" id="8_04bx1"]
+
+[sub_resource type="Resource" id="Resource_2277o"]
+script = ExtResource("4_22hgg")
+char_duration = 80
+end_delay = 500
+raw_text = "Wacky Gun? We're selling a Wacky Gun.\\nYou could buy a Wacky Gun. Call now."
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_0ul5k"]
+script = ExtResource("4_22hgg")
+char_duration = 150
+end_delay = 1500
+raw_text = "It's at {num}.\\nFor a Wacky Gun. Thanks. It's gone now."
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_qdgsb"]
+script = ExtResource("5_6gslr")
+audio1 = ExtResource("1_0ul5k")
+audio2 = ExtResource("2_ta31h")
+image = ExtResource("3_0ul5k")
+messages = Array[ExtResource("4_22hgg")]([SubResource("Resource_2277o"), SubResource("Resource_0ul5k")])
+metadata/_custom_type_script = "uid://8vskdejnd65h"
+
+[sub_resource type="Resource" id="Resource_ta31h"]
+script = ExtResource("4_22hgg")
+char_duration = 70
+raw_text = "Thanks. Thanks for buying the Wacky Gun. Here it is."
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_4d7yu"]
+script = ExtResource("8_04bx1")
+audio = ExtResource("6_l64e8")
+item = ExtResource("7_0ul5k")
+price = 400.0
+messages = Array[ExtResource("4_22hgg")]([SubResource("Resource_ta31h")])
+metadata/_custom_type_script = "uid://cjtbye8oxjp2v"
+
+[resource]
+script = ExtResource("1_ewhfk")
+intercom = SubResource("Resource_qdgsb")
+phone = SubResource("Resource_4d7yu")
+metadata/_custom_type_script = "uid://cfniqj1lbha45"

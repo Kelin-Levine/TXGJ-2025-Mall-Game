@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr4slfmee6vex"]
+
+[ext_resource type="FontFile" uid="uid://dm350iai86u8r" path="res://Comic Sans MS/Comic Sans MS.ttf" id="1_51ft5"]
+[ext_resource type="Script" uid="uid://cyhprc02qbb4i" path="res://gimmicks/money_time/floating_text.gd" id="1_l1xvy"]
+
+[sub_resource type="Theme" id="Theme_mr3gu"]
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_51ft5")
+
+[node name="FloatingText" type="Label" node_paths=PackedStringArray("timer")]
+offset_right = 154.0
+offset_bottom = 34.0
+theme = SubResource("Theme_mr3gu")
+text = "hellooooooooo"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_l1xvy")
+timer = NodePath("Timer")
+metadata/_custom_type_script = "uid://cyhprc02qbb4i"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true

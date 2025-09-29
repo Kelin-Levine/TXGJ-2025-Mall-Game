@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="BoxOffer" load_steps=15 format=3 uid="uid://bqb5hrk7txc5n"]
+
+[ext_resource type="Script" uid="uid://cfniqj1lbha45" path="res://gimmicks/offer_box/resources/box_offer.gd" id="1_7x3sb"]
+[ext_resource type="AudioStream" uid="uid://f630jot62rnm" path="res://gimmicks/offer_box/ads/ship/bahamas intercom 1.mp3" id="1_8rg4s"]
+[ext_resource type="AudioStream" uid="uid://1efvsh2nam1p" path="res://gimmicks/offer_box/ads/ship/bahamas intercom 2.mp3" id="2_44vwo"]
+[ext_resource type="Script" uid="uid://bv5fdu7ur5o30" path="res://gimmicks/offer_box/resources/box_message.gd" id="3_opuhg"]
+[ext_resource type="Script" uid="uid://8vskdejnd65h" path="res://gimmicks/offer_box/resources/intercom_call.gd" id="4_3030m"]
+[ext_resource type="Script" uid="uid://cjtbye8oxjp2v" path="res://gimmicks/offer_box/resources/phone_call.gd" id="5_m7pd3"]
+[ext_resource type="AudioStream" uid="uid://dcxomh58gxkt8" path="res://gimmicks/offer_box/ads/ship/call2.mp3" id="5_opuhg"]
+[ext_resource type="PackedScene" uid="uid://bk5vka3flb26i" path="res://items/tools/ship/ship.tscn" id="6_3030m"]
+
+[sub_resource type="Resource" id="Resource_gt4jg"]
+script = ExtResource("3_opuhg")
+char_duration = 100
+raw_text = "senior citizens!!!! are you ready to live it up!!!\\nwe’re giving two free and yes i do mean FREE!!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_3yvar"]
+script = ExtResource("3_opuhg")
+char_duration = 100
+raw_text = "tickets to an all expenses paid cruise to the BAHAMAS!!!\\ncall now at {num} to claim your tickets!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_4w6q1"]
+script = ExtResource("4_3030m")
+audio1 = ExtResource("1_8rg4s")
+audio2 = ExtResource("2_44vwo")
+messages = Array[ExtResource("3_opuhg")]([SubResource("Resource_gt4jg"), SubResource("Resource_3yvar")])
+metadata/_custom_type_script = "uid://8vskdejnd65h"
+
+[sub_resource type="Resource" id="Resource_m7pd3"]
+script = ExtResource("3_opuhg")
+char_duration = 70
+raw_text = "You’ve reached Business Incorporated.\\nYour information has been recorded in our systems,"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_1nocu"]
+script = ExtResource("3_opuhg")
+char_duration = 70
+raw_text = "and your item is being delivered to you now.\\nThank you for giving us your data."
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_f0ju8"]
+script = ExtResource("5_m7pd3")
+audio = ExtResource("5_opuhg")
+item = ExtResource("6_3030m")
+price = 500.0
+messages = Array[ExtResource("3_opuhg")]([SubResource("Resource_m7pd3"), SubResource("Resource_1nocu")])
+metadata/_custom_type_script = "uid://cjtbye8oxjp2v"
+
+[resource]
+script = ExtResource("1_7x3sb")
+intercom = SubResource("Resource_4w6q1")
+phone = SubResource("Resource_f0ju8")
+metadata/_custom_type_script = "uid://cfniqj1lbha45"

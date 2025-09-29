@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://73322nq7j82c"]
+
+[ext_resource type="Script" uid="uid://dw8t6l4xn6x3s" path="res://items/tools/simple_projectile_2d.gd" id="1_kvh5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahvfu"]
+size = Vector2(32, 16)
+
+[sub_resource type="Gradient" id="Gradient_8urfy"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x3d7o"]
+gradient = SubResource("Gradient_8urfy")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[node name="LaserBullet" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 4
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 8
+script = ExtResource("1_kvh5v")
+metadata/_custom_type_script = "uid://dw8t6l4xn6x3s"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ahvfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+rotation = 1.5707964
+scale = Vector2(0.25, 0.5)
+texture = SubResource("GradientTexture2D_x3d7o")

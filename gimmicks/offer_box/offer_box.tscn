@@ -1,0 +1,230 @@
+[gd_scene load_steps=45 format=3 uid="uid://btcth45xmfj8v"]
+
+[ext_resource type="FontFile" uid="uid://dm350iai86u8r" path="res://Comic Sans MS/Comic Sans MS.ttf" id="1_1ea46"]
+[ext_resource type="Script" uid="uid://u6yokhsaylqo" path="res://gimmicks/offer_box/offer_box.gd" id="1_elg3o"]
+[ext_resource type="Shader" uid="uid://cvrc8olvx4fma" path="res://utility/vibrate.gdshader" id="1_esk4s"]
+[ext_resource type="Resource" uid="uid://bymnrfra23v8i" path="res://gimmicks/offer_box/ads/dialing/dialing_call.tres" id="2_ysjq4"]
+[ext_resource type="Resource" uid="uid://dnmiqmj2lyi6u" path="res://gimmicks/offer_box/ads/dialing/broke_ass.tres" id="3_jb8vx"]
+[ext_resource type="Script" uid="uid://cfniqj1lbha45" path="res://gimmicks/offer_box/resources/box_offer.gd" id="3_r2a16"]
+[ext_resource type="AudioStream" uid="uid://bi1r4n0bbn7d" path="res://gimmicks/offer_box/numbers/num_zero.wav" id="3_ri4sh"]
+[ext_resource type="Resource" uid="uid://dcy4kh8xkd8o5" path="res://gimmicks/offer_box/calling_list/wacky_gun.tres" id="4_jb8vx"]
+[ext_resource type="AudioStream" uid="uid://cr72i1v4y6c7d" path="res://gimmicks/offer_box/numbers/num_one.wav" id="4_kfb1q"]
+[ext_resource type="SpriteFrames" uid="uid://u81u6c5fgdfk" path="res://gimmicks/offer_box/phone_anim/phone_frames.tres" id="4_yo2ar"]
+[ext_resource type="SpriteFrames" uid="uid://cmo6e60yb5i2j" path="res://gimmicks/offer_box/intercom_anim/intercom_frames.tres" id="5_fnjt5"]
+[ext_resource type="AudioStream" uid="uid://bpsrj3sdsubc3" path="res://gimmicks/offer_box/numbers/num_two.wav" id="5_j6ko6"]
+[ext_resource type="Script" uid="uid://bxop0yw1wcf65" path="res://gimmicks/offer_box/number_speaker.gd" id="6_jo0i8"]
+[ext_resource type="Resource" uid="uid://c8wb4ko2j6tnj" path="res://gimmicks/offer_box/calling_list/jesus.tres" id="6_qxx0y"]
+[ext_resource type="AudioStream" uid="uid://cx38mj3sjt2l8" path="res://gimmicks/offer_box/numbers/num_three.wav" id="6_ysjq4"]
+[ext_resource type="AudioStream" uid="uid://dmmee5n0ydtjo" path="res://gimmicks/offer_box/numbers/num_four.wav" id="7_qjctj"]
+[ext_resource type="Resource" uid="uid://cxtodejhumce4" path="res://gimmicks/offer_box/calling_list/car.tres" id="7_u1doq"]
+[ext_resource type="Resource" uid="uid://bqb5hrk7txc5n" path="res://gimmicks/offer_box/calling_list/ship.tres" id="8_4ysr4"]
+[ext_resource type="AudioStream" uid="uid://diuumhoalceii" path="res://gimmicks/offer_box/numbers/num_five.wav" id="8_u0b7h"]
+[ext_resource type="Resource" uid="uid://f4cusrb4nxu4" path="res://gimmicks/offer_box/calling_list/laser.tres" id="9_b8qan"]
+[ext_resource type="AudioStream" uid="uid://b67c0g5rc1amc" path="res://gimmicks/offer_box/numbers/num_six.wav" id="9_r2a16"]
+[ext_resource type="AudioStream" uid="uid://cykpapstv88lh" path="res://gimmicks/offer_box/numbers/num_seven.wav" id="10_jb8vx"]
+[ext_resource type="Resource" uid="uid://dhngd76178x53" path="res://gimmicks/offer_box/calling_list/weights.tres" id="10_wtkos"]
+[ext_resource type="Resource" uid="uid://ddb35l8v4dxxr" path="res://gimmicks/offer_box/calling_list/basebat.tres" id="11_5tmx7"]
+[ext_resource type="AudioStream" uid="uid://lvpyulwdccqo" path="res://gimmicks/offer_box/numbers/num_eight.wav" id="11_qxx0y"]
+[ext_resource type="AudioStream" uid="uid://c7nwisi7opoco" path="res://gimmicks/offer_box/numbers/num_nine.wav" id="12_u1doq"]
+[ext_resource type="Texture2D" uid="uid://bhju0cb4paw47" path="res://gimmicks/offer_box/textbox.png" id="15_kfb1q"]
+[ext_resource type="Script" uid="uid://bk3tnf3s17vyp" path="res://gimmicks/offer_box/dial_box.gd" id="18_j6ko6"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="18_qjctj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ksbk0"]
+seed = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vptgk"]
+width = 1200
+height = 4
+noise = SubResource("FastNoiseLite_ksbk0")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3hinn"]
+seed = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1yamw"]
+width = 1200
+height = 4
+noise = SubResource("FastNoiseLite_3hinn")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d4s0m"]
+shader = ExtResource("1_esk4s")
+shader_parameter/intensity = 7.0
+shader_parameter/period = 15.0
+shader_parameter/noise1 = SubResource("NoiseTexture2D_vptgk")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_1yamw")
+
+[sub_resource type="Theme" id="Theme_1ea46"]
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_1ea46")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1ea46"]
+seed = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_elg3o"]
+width = 1200
+height = 4
+noise = SubResource("FastNoiseLite_1ea46")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hh4x5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yo2ar"]
+width = 1200
+height = 4
+noise = SubResource("FastNoiseLite_hh4x5")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fnjt5"]
+shader = ExtResource("1_esk4s")
+shader_parameter/intensity = 12.0
+shader_parameter/period = 10.0
+shader_parameter/noise1 = SubResource("NoiseTexture2D_elg3o")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_yo2ar")
+
+[sub_resource type="Gradient" id="Gradient_esk4s"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ea46"]
+gradient = SubResource("Gradient_esk4s")
+width = 920
+height = 125
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6614l"]
+shader = ExtResource("1_esk4s")
+shader_parameter/intensity = 2.5
+shader_parameter/period = 10.0
+shader_parameter/noise1 = SubResource("NoiseTexture2D_elg3o")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_yo2ar")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfb1q"]
+bg_color = Color(0.81, 0.46980003, 0.5094901, 0.78431374)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+
+[node name="OfferBox" type="CanvasLayer" node_paths=PackedStringArray("offer_timer", "dial_timer", "message_label", "advertisement_sprite", "text_box", "phone_sprite", "intercom_sprite", "number_speaker", "audio_player")]
+script = ExtResource("1_elg3o")
+offer_timer = NodePath("OfferTimer")
+dial_delay = Vector2(1, 4)
+dial_timer = NodePath("DialTimer")
+dial_call = ExtResource("2_ysjq4")
+dial_broke = ExtResource("3_jb8vx")
+message_label = NodePath("TextBox/MessageLabel")
+advertisement_sprite = NodePath("TextBox/AdvertisementRect")
+text_box = NodePath("TextBox")
+phone_sprite = NodePath("AnimatedPhone")
+intercom_sprite = NodePath("AnimatedIntercom")
+number_speaker = NodePath("NumberSpeaker")
+audio_player = NodePath("AudioStreamPlayer")
+calling_list = Array[ExtResource("3_r2a16")]([ExtResource("11_5tmx7"), ExtResource("7_u1doq"), ExtResource("6_qxx0y"), ExtResource("9_b8qan"), ExtResource("8_4ysr4"), ExtResource("4_jb8vx"), ExtResource("10_wtkos")])
+metadata/_custom_type_script = "uid://u6yokhsaylqo"
+
+[node name="NumberSpeaker" type="Node" parent="." node_paths=PackedStringArray("audio_player")]
+script = ExtResource("6_jo0i8")
+audio_player = NodePath("../AudioStreamPlayer")
+number_reads = Array[AudioStream]([ExtResource("3_ri4sh"), ExtResource("4_kfb1q"), ExtResource("5_j6ko6"), ExtResource("6_ysjq4"), ExtResource("7_qjctj"), ExtResource("8_u0b7h"), ExtResource("9_r2a16"), ExtResource("10_jb8vx"), ExtResource("11_qxx0y"), ExtResource("12_u1doq")])
+metadata/_custom_type_script = "uid://bxop0yw1wcf65"
+
+[node name="AnimatedPhone" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_d4s0m")
+position = Vector2(105, 171)
+rotation = -0.13962634
+scale = Vector2(1.2, 0.99999994)
+sprite_frames = ExtResource("4_yo2ar")
+animation = &"close"
+frame = 5
+
+[node name="AnimatedIntercom" type="AnimatedSprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_d4s0m")
+position = Vector2(95, 150)
+rotation = -0.17453294
+scale = Vector2(0.7, 0.7)
+sprite_frames = ExtResource("5_fnjt5")
+animation = &"yapping"
+frame_progress = 0.11985009
+
+[node name="TextBox" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -376.0
+offset_top = 20.0
+offset_right = 504.0
+offset_bottom = 125.0
+grow_horizontal = 2
+theme = SubResource("Theme_1ea46")
+
+[node name="AdvertisementRect" type="TextureRect" parent="TextBox"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 130.0
+offset_right = 910.0
+offset_bottom = 350.0
+texture = ExtResource("18_qjctj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackgroundRectOld" type="TextureRect" parent="TextBox"]
+visible = false
+material = SubResource("ShaderMaterial_fnjt5")
+layout_mode = 0
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 900.0
+offset_bottom = 115.0
+texture = SubResource("GradientTexture2D_1ea46")
+
+[node name="BackgroundRect" type="TextureRect" parent="TextBox"]
+material = SubResource("ShaderMaterial_fnjt5")
+layout_mode = 0
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 960.0
+offset_bottom = 130.0
+texture = ExtResource("15_kfb1q")
+expand_mode = 1
+
+[node name="MessageLabel" type="Label" parent="TextBox"]
+material = SubResource("ShaderMaterial_6614l")
+layout_mode = 0
+offset_left = 10.0
+offset_top = 7.5
+offset_right = 870.0
+offset_bottom = 97.5
+text = "HELLO!! YOURE' COMPUTER HAS VIRUS!!
+Line2"
+autowrap_mode = 2
+
+[node name="DialBox" type="Label" parent="TextBox" node_paths=PackedStringArray("offer_box")]
+layout_mode = 1
+offset_top = 140.0
+offset_right = 150.0
+offset_bottom = 191.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_kfb1q")
+text = "_"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("18_j6ko6")
+offer_box = NodePath("../..")
+metadata/_custom_type_script = "uid://bk3tnf3s17vyp"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="OfferTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="DialTimer" type="Timer" parent="."]
+one_shot = true

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3emmfhmlrt7j"]
+
+[ext_resource type="Script" uid="uid://h68i3v6dkoa5" path="res://enemy/enemy_2d.gd" id="1_mvxf5"]
+[ext_resource type="PackedScene" uid="uid://s1uykgk3esk1" path="res://enemy/wallet/wallet.tscn" id="2_mkvoc"]
+[ext_resource type="Texture2D" uid="uid://g6ykah1pta5c" path="res://enemy/sprites/mallcop_topdown.png" id="2_mvxf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7axxq"]
+size = Vector2(28, 64)
+
+[node name="FastEnemy" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
+collision_layer = 4
+collision_mask = 7
+motion_mode = 1
+platform_on_leave = 2
+platform_floor_layers = 1
+platform_wall_layers = 1
+script = ExtResource("1_mvxf5")
+speed = 100.0
+value_range = Vector2(6.667, 10)
+sprites = [NodePath("MallcopSprite")]
+wallet_scene = ExtResource("2_mkvoc")
+metadata/_custom_type_script = "uid://h68i3v6dkoa5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7axxq")
+
+[node name="MallcopSprite" type="Sprite2D" parent="."]
+position = Vector2(4, 0)
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mvxf5")

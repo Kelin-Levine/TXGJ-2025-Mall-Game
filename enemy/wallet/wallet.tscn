@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://s1uykgk3esk1"]
+
+[ext_resource type="Script" uid="uid://davk22ca33rxq" path="res://enemy/wallet/wallet.gd" id="1_0f1q5"]
+[ext_resource type="Shader" uid="uid://d371irrbd1v4d" path="res://enemy/wallet/wallet.gdshader" id="1_1ytub"]
+[ext_resource type="PackedScene" uid="uid://dr4slfmee6vex" path="res://gimmicks/money_time/floating_text.tscn" id="2_j1cfo"]
+[ext_resource type="Texture2D" uid="uid://bgg7eln4ki0yr" path="res://enemy/wallet/wallet.png" id="4_j1cfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ytub"]
+size = Vector2(32, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0f1q5"]
+shader = ExtResource("1_1ytub")
+shader_parameter/period = 2.0
+shader_parameter/bounce = 70.0
+
+[node name="Wallet" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_0f1q5")
+pickup_label = ExtResource("2_j1cfo")
+metadata/_custom_type_script = "uid://davk22ca33rxq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1ytub")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0f1q5")
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("4_j1cfo")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PhoneCall" load_steps=4 format=3 uid="uid://dnmiqmj2lyi6u"]
+
+[ext_resource type="Script" uid="uid://bv5fdu7ur5o30" path="res://gimmicks/offer_box/resources/box_message.gd" id="1_bvye6"]
+[ext_resource type="Script" uid="uid://cjtbye8oxjp2v" path="res://gimmicks/offer_box/resources/phone_call.gd" id="2_kqoib"]
+
+[sub_resource type="Resource" id="Resource_bvye6"]
+script = ExtResource("1_bvye6")
+raw_text = "(But, your card declined.)\\n(Come back when you're a little... hmm... richer!)"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[resource]
+script = ExtResource("2_kqoib")
+messages = Array[ExtResource("1_bvye6")]([SubResource("Resource_bvye6")])
+metadata/_custom_type_script = "uid://cjtbye8oxjp2v"

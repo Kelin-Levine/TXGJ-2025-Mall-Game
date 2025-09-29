@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0fk41122854"]
+
+[ext_resource type="Script" uid="uid://53jbfrrdgich" path="res://items/tools/basebat/basebat.gd" id="1_1iw5s"]
+[ext_resource type="Texture2D" uid="uid://bi73ol6g5yora" path="res://items/tools/basebat/baseballbatsprite.png" id="3_nrjhg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0vib"]
+size = Vector2(60, 14)
+
+[node name="Basebat" type="Node2D" node_paths=PackedStringArray("area", "collision")]
+script = ExtResource("1_1iw5s")
+knockback = 20.0
+area = NodePath("Area2D")
+collision = NodePath("Area2D/CollisionShape2D")
+metadata/_custom_type_script = "uid://04uvnjv7724o"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(26, -1)
+rotation = 1.5707964
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("3_nrjhg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(26, -1)
+shape = SubResource("RectangleShape2D_f0vib")
+disabled = true

@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="BoxOffer" load_steps=16 format=3 uid="uid://ddb35l8v4dxxr"]
+
+[ext_resource type="Script" uid="uid://bv5fdu7ur5o30" path="res://gimmicks/offer_box/resources/box_message.gd" id="1_fa3ms"]
+[ext_resource type="AudioStream" uid="uid://ekiexbeoisny" path="res://gimmicks/offer_box/ads/basebat/delivery intercom.wav" id="1_ljwxd"]
+[ext_resource type="Script" uid="uid://cfniqj1lbha45" path="res://gimmicks/offer_box/resources/box_offer.gd" id="1_w2p0l"]
+[ext_resource type="Script" uid="uid://8vskdejnd65h" path="res://gimmicks/offer_box/resources/intercom_call.gd" id="2_ibr35"]
+[ext_resource type="Script" uid="uid://cjtbye8oxjp2v" path="res://gimmicks/offer_box/resources/phone_call.gd" id="3_berbg"]
+[ext_resource type="AudioStream" uid="uid://cf7no8pslssji" path="res://gimmicks/offer_box/ads/basebat/phone-call1.mp3" id="4_rwqyj"]
+[ext_resource type="PackedScene" uid="uid://d0fk41122854" path="res://items/tools/basebat/basebat.tscn" id="5_g5vuh"]
+
+[sub_resource type="Resource" id="Resource_yv2qw"]
+script = ExtResource("1_fa3ms")
+char_duration = 80
+raw_text = "are you tired of waiting impatiently for deliveries???\\nWell, we’re giving something away FOR FREE"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_7pyx2"]
+script = ExtResource("1_fa3ms")
+char_duration = 80
+end_delay = 2000
+raw_text = "and it will not take long AT ALL!!!\\njust dial {num}"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_ljwxd"]
+script = ExtResource("2_ibr35")
+audio1 = ExtResource("1_ljwxd")
+messages = Array[ExtResource("1_fa3ms")]([SubResource("Resource_yv2qw"), SubResource("Resource_7pyx2")])
+metadata/_custom_type_script = "uid://8vskdejnd65h"
+
+[sub_resource type="Resource" id="Resource_g5vuh"]
+script = ExtResource("1_fa3ms")
+raw_text = "Hello! Thank you for calling. Due to the high volume of callers we've been receiving, we have to place you on hold."
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_7jan6"]
+script = ExtResource("1_fa3ms")
+char_duration = 80
+end_delay = 17000
+raw_text = "Please be patient."
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_sktd6"]
+script = ExtResource("1_fa3ms")
+char_duration = 60
+raw_text = "Hello, I hope your evening’s going well! I take it you’re calling about our television advertisement?"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_5124i"]
+script = ExtResource("1_fa3ms")
+char_duration = 60
+raw_text = "Perfect, I’ll send it over to you right away!\\nThank you for calling, and enjoy the rest of your evening!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_rwqyj"]
+script = ExtResource("3_berbg")
+audio = ExtResource("4_rwqyj")
+item = ExtResource("5_g5vuh")
+price = 300.0
+messages = Array[ExtResource("1_fa3ms")]([SubResource("Resource_g5vuh"), SubResource("Resource_7jan6"), SubResource("Resource_sktd6"), SubResource("Resource_5124i")])
+metadata/_custom_type_script = "uid://cjtbye8oxjp2v"
+
+[resource]
+script = ExtResource("1_w2p0l")
+intercom = SubResource("Resource_ljwxd")
+phone = SubResource("Resource_rwqyj")
+metadata/_custom_type_script = "uid://cfniqj1lbha45"

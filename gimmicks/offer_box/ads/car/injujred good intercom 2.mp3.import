@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxufjbmlypovh"
+path="res://.godot/imported/injujred good intercom 2.mp3-ea863c5be6554ae2d52c06c051aad017.mp3str"
+
+[deps]
+
+source_file="res://gimmicks/offer_box/ads/car/injujred good intercom 2.mp3"
+dest_files=["res://.godot/imported/injujred good intercom 2.mp3-ea863c5be6554ae2d52c06c051aad017.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

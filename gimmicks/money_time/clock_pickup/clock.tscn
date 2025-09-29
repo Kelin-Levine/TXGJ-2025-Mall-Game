@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpybgwxsgogvy"]
+
+[ext_resource type="Script" uid="uid://bhs43wtnu46q0" path="res://gimmicks/money_time/clock_pickup/clock.gd" id="1_0lxkw"]
+[ext_resource type="PackedScene" uid="uid://dr4slfmee6vex" path="res://gimmicks/money_time/floating_text.tscn" id="2_4qn54"]
+[ext_resource type="Shader" uid="uid://d371irrbd1v4d" path="res://enemy/wallet/wallet.gdshader" id="3_0nb5r"]
+[ext_resource type="Texture2D" uid="uid://srdcs28gad3e" path="res://gimmicks/money_time/clock_pickup/clock.png" id="4_g0kfr"]
+[ext_resource type="Script" uid="uid://bt6epwdrcb20a" path="res://gimmicks/money_time/shimmer.gd" id="5_5hb0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ytub"]
+size = Vector2(64, 64)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0f1q5"]
+shader = ExtResource("3_0nb5r")
+shader_parameter/period = 2.0
+shader_parameter/bounce = 70.0
+
+[node name="Clock" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_0lxkw")
+pickup_label = ExtResource("2_4qn54")
+metadata/_custom_type_script = "uid://bhs43wtnu46q0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1ytub")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0f1q5")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_g0kfr")
+
+[node name="Shimmer" type="Node" parent="Sprite2D"]
+script = ExtResource("5_5hb0g")
+interval_msec = 800
+metadata/_custom_type_script = "uid://bt6epwdrcb20a"

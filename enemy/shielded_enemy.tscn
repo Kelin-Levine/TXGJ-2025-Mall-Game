@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl8gb1pcohd58"]
+
+[ext_resource type="Script" uid="uid://h68i3v6dkoa5" path="res://enemy/enemy_2d.gd" id="1_cr6ya"]
+[ext_resource type="PackedScene" uid="uid://s1uykgk3esk1" path="res://enemy/wallet/wallet.tscn" id="2_tyawl"]
+[ext_resource type="Texture2D" uid="uid://b6cupf40p30in" path="res://enemy/sprites/clipboard_shield.png" id="2_v6kow"]
+[ext_resource type="Texture2D" uid="uid://bxsn72vcfhhwj" path="res://enemy/sprites/storemanager_topdown.png" id="3_tyawl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7axxq"]
+size = Vector2(28, 64)
+
+[node name="ShieldedEnemy" type="CharacterBody2D" node_paths=PackedStringArray("shield_node", "sprites")]
+collision_layer = 4
+collision_mask = 7
+motion_mode = 1
+platform_on_leave = 2
+platform_floor_layers = 1
+platform_wall_layers = 1
+script = ExtResource("1_cr6ya")
+value_range = Vector2(8, 14)
+has_shield = true
+shield_node = NodePath("ShieldSprite")
+sprites = [NodePath("ManagerSprite")]
+wallet_scene = ExtResource("2_tyawl")
+metadata/_custom_type_script = "uid://h68i3v6dkoa5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7axxq")
+
+[node name="ShieldSprite" type="Sprite2D" parent="."]
+position = Vector2(12, 14)
+rotation = 1.2217305
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_v6kow")
+
+[node name="ManagerSprite" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_tyawl")

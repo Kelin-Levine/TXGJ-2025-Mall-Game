@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm5ilg4cooq5u"]
+
+[ext_resource type="Script" uid="uid://c5dunfxhhvsho" path="res://items/tools/penetrating_projectile_2d.gd" id="1_gxa2h"]
+[ext_resource type="Texture2D" uid="uid://bheaopda0vmaw" path="res://items/tools/weights/gymweight_projectile.png" id="2_527nk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahvfu"]
+size = Vector2(60, 16)
+
+[node name="WeightsBullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_gxa2h")
+damage = 1000.0
+metadata/_custom_type_script = "uid://c5dunfxhhvsho"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ahvfu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+rotation = 3.1415927
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_527nk")

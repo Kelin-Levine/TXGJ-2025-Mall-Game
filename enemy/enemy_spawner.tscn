@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://chwuhs1ojivyv"]
+
+[ext_resource type="Script" uid="uid://cval0uvvy0c5u" path="res://enemy/enemy_spawner.gd" id="1_82mlf"]
+[ext_resource type="PackedScene" uid="uid://d3emmfhmlrt7j" path="res://enemy/fast_enemy.tscn" id="2_fjagd"]
+[ext_resource type="PackedScene" uid="uid://dqsr64c0ylxg6" path="res://enemy/rolling_enemy.tscn" id="3_lc7nh"]
+[ext_resource type="PackedScene" uid="uid://cl8gb1pcohd58" path="res://enemy/shielded_enemy.tscn" id="4_7yjef"]
+[ext_resource type="PackedScene" uid="uid://cslknhxcr80n4" path="res://enemy/simple_enemy.tscn" id="5_sm0a0"]
+
+[node name="EnemySpawner" type="Marker2D" node_paths=PackedStringArray("timer")]
+script = ExtResource("1_82mlf")
+timer = NodePath("Timer")
+enemies = Array[PackedScene]([ExtResource("2_fjagd"), ExtResource("3_lc7nh"), ExtResource("4_7yjef"), ExtResource("5_sm0a0")])
+metadata/_custom_type_script = "uid://cval0uvvy0c5u"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true

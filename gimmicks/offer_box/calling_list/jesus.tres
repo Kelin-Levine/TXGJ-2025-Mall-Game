@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="BoxOffer" load_steps=14 format=3 uid="uid://c8wb4ko2j6tnj"]
+
+[ext_resource type="Script" uid="uid://cfniqj1lbha45" path="res://gimmicks/offer_box/resources/box_offer.gd" id="1_milci"]
+[ext_resource type="AudioStream" uid="uid://c7kfjnj2ux35" path="res://gimmicks/offer_box/ads/jesus/jesus is coming intercom.mp3" id="1_xxfhm"]
+[ext_resource type="Texture2D" uid="uid://dki5wtia4wwmc" path="res://gimmicks/offer_box/ads/jesus/ad3[jesus_is_coming].png" id="2_mya6j"]
+[ext_resource type="Script" uid="uid://bv5fdu7ur5o30" path="res://gimmicks/offer_box/resources/box_message.gd" id="3_q8pqi"]
+[ext_resource type="Script" uid="uid://8vskdejnd65h" path="res://gimmicks/offer_box/resources/intercom_call.gd" id="4_j32e0"]
+[ext_resource type="PackedScene" uid="uid://bucd4bmqppgs2" path="res://items/tools/jesus/jesus.tscn" id="5_mya6j"]
+[ext_resource type="Script" uid="uid://cjtbye8oxjp2v" path="res://gimmicks/offer_box/resources/phone_call.gd" id="5_ykfgh"]
+
+[sub_resource type="Resource" id="Resource_fu34x"]
+script = ExtResource("3_q8pqi")
+raw_text = "Statistics show that many people these days\\nhaven’t experienced the joy of jesus coming"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_7ii6u"]
+script = ExtResource("3_q8pqi")
+raw_text = "But as we all know, jesus is quickly approaching.\\nAnd he definitely is coming."
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_mya6j"]
+script = ExtResource("3_q8pqi")
+end_delay = 4000
+raw_text = "But the better question is: are you?\\n{num}"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_nr6pd"]
+script = ExtResource("4_j32e0")
+audio1 = ExtResource("1_xxfhm")
+image = ExtResource("2_mya6j")
+messages = Array[ExtResource("3_q8pqi")]([SubResource("Resource_fu34x"), SubResource("Resource_7ii6u"), SubResource("Resource_mya6j")])
+metadata/_custom_type_script = "uid://8vskdejnd65h"
+
+[sub_resource type="Resource" id="Resource_q8pqi"]
+script = ExtResource("3_q8pqi")
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_6dlpn"]
+script = ExtResource("5_ykfgh")
+item = ExtResource("5_mya6j")
+price = 300.0
+messages = Array[ExtResource("3_q8pqi")]([SubResource("Resource_q8pqi")])
+metadata/_custom_type_script = "uid://cjtbye8oxjp2v"
+
+[resource]
+script = ExtResource("1_milci")
+intercom = SubResource("Resource_nr6pd")
+phone = SubResource("Resource_6dlpn")
+metadata/_custom_type_script = "uid://cfniqj1lbha45"

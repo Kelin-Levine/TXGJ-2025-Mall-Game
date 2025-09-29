@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://cmo6e60yb5i2j"]
+
+[ext_resource type="Texture2D" uid="uid://ytjr05iansvi" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-0.png" id="1_lwcqt"]
+[ext_resource type="Texture2D" uid="uid://rxhqjsvp26d8" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-1.png" id="2_gnwws"]
+[ext_resource type="Texture2D" uid="uid://0v367542y3er" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-2.png" id="3_vofqg"]
+[ext_resource type="Texture2D" uid="uid://coy8m5tnge7kr" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-3.png" id="4_xu2cu"]
+[ext_resource type="Texture2D" uid="uid://bfjxaqsk2ig3p" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-4.png" id="5_i3sb0"]
+[ext_resource type="Texture2D" uid="uid://dpnpqa7icbrc7" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-5.png" id="6_tinbp"]
+[ext_resource type="Texture2D" uid="uid://ox2ip0i3130g" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-6.png" id="7_pjtmg"]
+[ext_resource type="Texture2D" uid="uid://dmxktwnjq3fdv" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-7.png" id="8_7vsew"]
+[ext_resource type="Texture2D" uid="uid://b770qwmgo55wm" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-8.png" id="9_kss3c"]
+[ext_resource type="Texture2D" uid="uid://ccyv7nxo54b7m" path="res://gimmicks/offer_box/intercom_anim/pixil-frame-9.png" id="10_jx8b6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lwcqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gnwws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vofqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xu2cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i3sb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tinbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pjtmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7vsew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kss3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jx8b6")
+}],
+"loop": true,
+"name": &"yapping",
+"speed": 20.0
+}]

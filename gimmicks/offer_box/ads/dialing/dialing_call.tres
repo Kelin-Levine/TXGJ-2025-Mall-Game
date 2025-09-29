@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PhoneCall" load_steps=5 format=3 uid="uid://bymnrfra23v8i"]
+
+[ext_resource type="AudioStream" uid="uid://bvvd05w524m10" path="res://gimmicks/offer_box/ads/dialing/dialing.mp3" id="1_jstee"]
+[ext_resource type="Script" uid="uid://bv5fdu7ur5o30" path="res://gimmicks/offer_box/resources/box_message.gd" id="2_5ijpi"]
+[ext_resource type="Script" uid="uid://cjtbye8oxjp2v" path="res://gimmicks/offer_box/resources/phone_call.gd" id="3_dwo84"]
+
+[sub_resource type="Resource" id="Resource_0yfkn"]
+script = ExtResource("2_5ijpi")
+end_delay = 10000
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[resource]
+script = ExtResource("3_dwo84")
+audio = ExtResource("1_jstee")
+messages = Array[ExtResource("2_5ijpi")]([SubResource("Resource_0yfkn")])
+metadata/_custom_type_script = "uid://cjtbye8oxjp2v"

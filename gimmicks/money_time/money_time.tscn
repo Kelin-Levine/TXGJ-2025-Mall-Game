@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=3 uid="uid://bveq5o1ouoohu"]
+
+[ext_resource type="FontFile" uid="uid://dm350iai86u8r" path="res://Comic Sans MS/Comic Sans MS.ttf" id="1_o4xf5"]
+[ext_resource type="Texture2D" uid="uid://dnp4l1c3cr7yf" path="res://gimmicks/money_time/coin.png" id="2_hh5y6"]
+[ext_resource type="Script" uid="uid://bpaxd1xvq5hsf" path="res://gimmicks/money_time/money_label.gd" id="2_mto1m"]
+[ext_resource type="Script" uid="uid://bt6epwdrcb20a" path="res://gimmicks/money_time/shimmer.gd" id="3_d2b8e"]
+[ext_resource type="Script" uid="uid://cj4tmh7hkvfnf" path="res://gimmicks/money_time/time_label.gd" id="4_2rg5v"]
+[ext_resource type="Texture2D" uid="uid://bo62mjh5kq0q6" path="res://gimmicks/money_time/tiny clock.png" id="5_hh5y6"]
+[ext_resource type="Texture2D" uid="uid://cggn8ic3ruli1" path="res://gimmicks/money_time/bandaid.png" id="7_85ogv"]
+[ext_resource type="Script" uid="uid://yn8bty0ok6qe" path="res://gimmicks/money_time/durability_label.gd" id="8_un0t1"]
+
+[sub_resource type="Theme" id="Theme_2rg5v"]
+Label/constants/outline_size = 16
+Label/font_sizes/font_size = 36
+Label/fonts/font = ExtResource("1_o4xf5")
+
+[node name="MoneyTime" type="CanvasLayer"]
+
+[node name="Display" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -40.0
+offset_right = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_2rg5v")
+
+[node name="Money" type="Control" parent="Display"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -20.0
+offset_right = -40.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Display/Money"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -64.0
+offset_top = -24.0
+offset_right = -4.0
+offset_bottom = 36.0
+texture = ExtResource("2_hh5y6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Shimmer" type="Node" parent="Display/Money/TextureRect"]
+script = ExtResource("3_d2b8e")
+metadata/_custom_type_script = "uid://bt6epwdrcb20a"
+
+[node name="Label" type="Label" parent="Display/Money"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 31.0
+text = "$0.00"
+script = ExtResource("2_mto1m")
+metadata/_custom_type_script = "uid://bpaxd1xvq5hsf"
+
+[node name="Time" type="Control" parent="Display"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -20.0
+offset_right = -80.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Display/Time"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -64.0
+offset_top = -24.0
+offset_right = -4.0
+offset_bottom = 36.0
+texture = ExtResource("5_hh5y6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Shimmer" type="Node" parent="Display/Time/TextureRect"]
+script = ExtResource("3_d2b8e")
+metadata/_custom_type_script = "uid://bt6epwdrcb20a"
+
+[node name="Label" type="Label" parent="Display/Time"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 31.0
+text = "60.00"
+script = ExtResource("4_2rg5v")
+metadata/_custom_type_script = "uid://cj4tmh7hkvfnf"
+
+[node name="Durability" type="Control" parent="Display"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -20.0
+offset_right = -320.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Display/Durability"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -64.0
+offset_top = -24.0
+offset_right = -4.0
+offset_bottom = 36.0
+texture = ExtResource("7_85ogv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Display/Durability"]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 31.0
+text = "100%"
+script = ExtResource("8_un0t1")
+metadata/_custom_type_script = "uid://yn8bty0ok6qe"

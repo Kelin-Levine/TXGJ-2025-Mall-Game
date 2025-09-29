@@ -91,6 +91,17 @@ func _ready() -> void:
 	register_axis(Timing.PHYSICS, &"aim",
 			axis_2d.new(&"aim_down", &"aim_up", &"aim_left", &"aim_right", false, 0.0))
 	register_button(Timing.PHYSICS, &"fire", button.new(&"fire"))
+	register_button(Timing.PHYSICS, &"phone_0", button.new(&"phone_0"))
+	register_button(Timing.PHYSICS, &"phone_1", button.new(&"phone_1"))
+	register_button(Timing.PHYSICS, &"phone_2", button.new(&"phone_2"))
+	register_button(Timing.PHYSICS, &"phone_3", button.new(&"phone_3"))
+	register_button(Timing.PHYSICS, &"phone_4", button.new(&"phone_4"))
+	register_button(Timing.PHYSICS, &"phone_5", button.new(&"phone_5"))
+	register_button(Timing.PHYSICS, &"phone_6", button.new(&"phone_6"))
+	register_button(Timing.PHYSICS, &"phone_7", button.new(&"phone_7"))
+	register_button(Timing.PHYSICS, &"phone_8", button.new(&"phone_8"))
+	register_button(Timing.PHYSICS, &"phone_9", button.new(&"phone_9"))
+	register_button(Timing.PHYSICS, &"phone_clear", button.new(&"phone_clear"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

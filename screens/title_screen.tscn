@@ -1,0 +1,202 @@
+[gd_scene load_steps=18 format=3 uid="uid://cfr5qursvwrce"]
+
+[ext_resource type="AudioStream" uid="uid://d7d0a3v4kxq8" path="res://screens/credits beat(could also be used for the intro comic if we wanted something more chill).mp3" id="1_fgfhh"]
+[ext_resource type="Texture2D" uid="uid://cffch3o7rxuot" path="res://screens/title-no-border.png" id="1_mo0vk"]
+[ext_resource type="FontFile" uid="uid://dm350iai86u8r" path="res://Comic Sans MS/Comic Sans MS.ttf" id="2_sxlwc"]
+[ext_resource type="AudioStream" uid="uid://cmhx3fp41p0s6" path="res://screens/comic-phonk-music.mp3" id="2_tsbkc"]
+[ext_resource type="AudioStream" uid="uid://bf0ee2d5ufd8j" path="res://screens/womp-womp-trumpet.mp3" id="3_bm4e8"]
+[ext_resource type="Script" uid="uid://bueywk2vfc0qj" path="res://screens/intro.gd" id="3_sxlwc"]
+[ext_resource type="PackedScene" uid="uid://urkqsl81pbqj" path="res://mall/mall_new.tscn" id="4_mo0vk"]
+[ext_resource type="Texture2D" uid="uid://bsmp0y0au0fkj" path="res://screens/intro_panels/credits-static.png" id="5_cjojn"]
+[ext_resource type="Texture2D" uid="uid://ditxqxceg8lqn" path="res://screens/intro_panels/mallcallbrawl_introcomic_panel1.png" id="5_mo0vk"]
+[ext_resource type="Texture2D" uid="uid://cmsxg6on0xush" path="res://screens/intro_panels/mallcallbrawl_introcomic_panel2.png" id="6_fgfhh"]
+[ext_resource type="Texture2D" uid="uid://ll287nptqyru" path="res://screens/intro_panels/mallcallbrawl_introcomic_panel3.png" id="7_tsbkc"]
+[ext_resource type="Texture2D" uid="uid://bph4jjp3ign8y" path="res://screens/intro_panels/mallcallbrawl_introcomic_panel4.png" id="8_bm4e8"]
+[ext_resource type="Texture2D" uid="uid://cet303mlibhg0" path="res://screens/intro_panels/mallcallbrawl_introcomic_panel5.png" id="9_t87nc"]
+[ext_resource type="Texture2D" uid="uid://yjvqqe73rq4h" path="res://screens/intro_panels/mallcallbrawl_introcomic_panel6.png" id="10_xjftx"]
+[ext_resource type="Texture2D" uid="uid://cki2jlkgkooxw" path="res://screens/intro_panels/you_died.png" id="11_s3po0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81buc"]
+bg_color = Color(0.9459134, 0.35420704, 0.60357213, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_n8gtu"]
+Button/constants/outline_size = 16
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("2_sxlwc")
+Button/styles/normal = SubResource("StyleBoxFlat_81buc")
+
+[node name="TitleScreen" type="CanvasLayer"]
+
+[node name="TitleAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_fgfhh")
+autoplay = true
+parameters/looping = true
+
+[node name="ComicAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tsbkc")
+parameters/looping = true
+
+[node name="WompAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bm4e8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mo0vk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 386.0
+offset_right = 214.0
+offset_bottom = 455.0
+theme = SubResource("Theme_n8gtu")
+text = "START"
+
+[node name="Intro" type="Control" parent="." node_paths=PackedStringArray("start_button", "title_screen", "title_music", "comic_music", "womp_music")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_sxlwc")
+start_button = NodePath("../StartButton")
+title_screen = NodePath("..")
+mall = ExtResource("4_mo0vk")
+title_music = NodePath("../TitleAudioPlayer")
+comic_music = NodePath("../ComicAudioPlayer")
+womp_music = NodePath("../WompAudioPlayer")
+metadata/_custom_type_script = "uid://bueywk2vfc0qj"
+
+[node name="ColorRect" type="ColorRect" parent="Intro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Intro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_mo0vk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Intro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_fgfhh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Intro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_tsbkc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="Intro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_bm4e8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="Intro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_t87nc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="Intro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_xjftx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Intro/TextureRect6"]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 560.0
+offset_right = 1140.0
+offset_bottom = 650.0
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_sxlwc")
+theme_override_font_sizes/font_size = 64
+text = "CLICK TO START"
+
+[node name="GameOver" type="TextureRect" parent="Intro"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_s3po0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Credits" type="TextureRect" parent="Intro"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_cjojn")
+expand_mode = 1
+stretch_mode = 5

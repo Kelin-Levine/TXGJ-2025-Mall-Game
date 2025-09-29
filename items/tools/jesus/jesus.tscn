@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bucd4bmqppgs2"]
+
+[ext_resource type="Script" uid="uid://d08175hs21qj5" path="res://items/tools/jesus/jesus.gd" id="1_j1e0c"]
+[ext_resource type="Texture2D" uid="uid://cugs67w6ha5ah" path="res://items/tools/jesus/jesus2.png" id="2_bj4ct"]
+[ext_resource type="PackedScene" uid="uid://bkfc6d0njb076" path="res://items/tools/jesus/jesus_standing.tscn" id="2_exqf0"]
+
+[node name="Jesus" type="Node2D"]
+script = ExtResource("1_j1e0c")
+standing = ExtResource("2_exqf0")
+metadata/_custom_type_script = "uid://04uvnjv7724o"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.842171e-14, -3.0000002)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bj4ct")

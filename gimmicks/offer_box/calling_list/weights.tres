@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="BoxOffer" load_steps=14 format=3 uid="uid://dhngd76178x53"]
+
+[ext_resource type="Script" uid="uid://cfniqj1lbha45" path="res://gimmicks/offer_box/resources/box_offer.gd" id="1_2x3bl"]
+[ext_resource type="AudioStream" uid="uid://8wkxhcmcff01" path="res://gimmicks/offer_box/ads/weights/gym intercom.mp3" id="1_tfq5e"]
+[ext_resource type="Script" uid="uid://bv5fdu7ur5o30" path="res://gimmicks/offer_box/resources/box_message.gd" id="2_72j6p"]
+[ext_resource type="Script" uid="uid://8vskdejnd65h" path="res://gimmicks/offer_box/resources/intercom_call.gd" id="3_b3w7t"]
+[ext_resource type="AudioStream" uid="uid://dhepp0msjrgip" path="res://gimmicks/offer_box/ads/weights/gym call fixed.mp3" id="4_b3w7t"]
+[ext_resource type="Script" uid="uid://cjtbye8oxjp2v" path="res://gimmicks/offer_box/resources/phone_call.gd" id="4_rrtos"]
+[ext_resource type="PackedScene" uid="uid://dqcdohyb2x82h" path="res://items/tools/weights/weights.tscn" id="5_rrtos"]
+
+[sub_resource type="Resource" id="Resource_2pyg3"]
+script = ExtResource("2_72j6p")
+char_duration = 100
+raw_text = "Wanna get a TOTALLY free trial to our awesome gym???\\nStart working on that summer body now!!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_ehr6q"]
+script = ExtResource("2_72j6p")
+char_duration = 100
+end_delay = 2000
+raw_text = "It’s better late than never!! call NOWWWW!!!\\n{num}"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_86wv3"]
+script = ExtResource("3_b3w7t")
+audio1 = ExtResource("1_tfq5e")
+messages = Array[ExtResource("2_72j6p")]([SubResource("Resource_2pyg3"), SubResource("Resource_ehr6q")])
+metadata/_custom_type_script = "uid://8vskdejnd65h"
+
+[sub_resource type="Resource" id="Resource_25fxp"]
+script = ExtResource("2_72j6p")
+char_duration = 70
+raw_text = "Hey! looks like you’ve signed up for our 365 day anti-free trial non-refundable non-cancellable gym membership!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_omq3y"]
+script = ExtResource("2_72j6p")
+char_duration = 70
+raw_text = "Way to get started on those body goals!\\nHere’s your reward!"
+metadata/_custom_type_script = "uid://bv5fdu7ur5o30"
+
+[sub_resource type="Resource" id="Resource_yykl8"]
+script = ExtResource("4_rrtos")
+audio = ExtResource("4_b3w7t")
+item = ExtResource("5_rrtos")
+price = 400.0
+messages = Array[ExtResource("2_72j6p")]([SubResource("Resource_25fxp"), SubResource("Resource_omq3y")])
+metadata/_custom_type_script = "uid://cjtbye8oxjp2v"
+
+[resource]
+script = ExtResource("1_2x3bl")
+intercom = SubResource("Resource_86wv3")
+phone = SubResource("Resource_yykl8")
+metadata/_custom_type_script = "uid://cfniqj1lbha45"
